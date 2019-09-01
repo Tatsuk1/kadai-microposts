@@ -1,0 +1,17 @@
+<body id = shops_list>
+  <div class="shops row">
+    <div class="col-sm-10 offset-1">
+      <% if @shops&.any? %>
+      <%= paginate @shops %>
+        <% @shops.each do |shop| %>
+          <div class="shop">
+            <div class="shop_pr">
+              <br>店舗名 <%= shop.shop_name %>
+            </div>
+          </div>
+        <% end %>
+        <%= paginate @shops %>
+      <% end %>
+    </div>
+  </div>
+</body>

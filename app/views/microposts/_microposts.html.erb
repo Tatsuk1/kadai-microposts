@@ -10,6 +10,9 @@
         <div>
           <p class="mb-0"><%= micropost.content %></p>
         </div>
+          <% if micropost.image? %>
+            <%= image_tag micropost.image.url %>
+          <% end %>
         <div class="button_delete">
           <% if current_user == micropost.user %>
             <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, 
